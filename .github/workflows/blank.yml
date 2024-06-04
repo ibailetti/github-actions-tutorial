@@ -20,7 +20,22 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
+    # ENV Variables
+    env:
+      iac_software: terraform
+      provider: aws
+      source: hashicorp/aws
+      version: 5.0
+
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: "Display message"
         run:  echo "Bienvenido"
+
+      - name: "Display env variables"
+        run: |
+          echo "IAC Software: ${{env.iac_software}}"
+          echo "Provider: ${{env.provider}}"
+          echo "Source: ${{env.source}}"
+          echo "Version: ${{env.version}}"
