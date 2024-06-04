@@ -27,6 +27,9 @@ jobs:
       source: hashicorp/aws
       version: 5.0
 
+      username: ${{secrets.USERNAME}}
+      password: ${{secrets.PASSWORD}}
+
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -41,7 +44,13 @@ jobs:
           echo "Source: ${{env.source}}"
           echo "Version: ${{env.version}}"
 
+
       - name: "Display github actions env variables"
         run: |
           echo "Event: ${{toJSON(github.event)}}"
           echo "Actor: $GITHUB_ACTOR"
+
+      - name: "Display github repository env variables"
+        run: |
+          echo "user: ${{env.username}}"
+          echo "password: ${{env.password}}"
