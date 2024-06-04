@@ -34,6 +34,7 @@ jobs:
         run:  echo "Bienvenido"
 
       - name: "Display env variables"
+        if: ${{env.iac_software=='cloudformation'}}
         run: |
           echo "IAC Software: ${{env.iac_software}}"
           echo "Provider: ${{env.provider}}"
