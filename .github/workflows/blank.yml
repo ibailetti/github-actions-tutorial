@@ -40,3 +40,7 @@ jobs:
           echo "Provider: ${{env.provider}}"
           echo "Source: ${{env.source}}"
           echo "Version: ${{env.version}}"
+
+      - name: "Display github actions env variables"
+        run: |
+          echo "Event: ${{toJSON(github.event)}}"
