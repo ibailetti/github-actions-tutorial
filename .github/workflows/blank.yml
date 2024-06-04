@@ -50,7 +50,11 @@ jobs:
           echo "Event: ${{toJSON(github.event)}}"
           echo "Actor: $GITHUB_ACTOR"
 
-      - name: "Display github repository env variables"
+      - name: "Display github actions repository secrets"
         run: |
           echo "user: ${{env.username}}"
           echo "password: ${{env.password}}"
+
+      - name: "Display github actions repository variables"
+        run: |
+          echo "team: ${{vars.TEAM}}
