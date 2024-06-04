@@ -44,3 +44,4 @@ jobs:
       - name: "Display github actions env variables"
         run: |
           echo "Event: ${{toJSON(github.event)}}"
+          echo "Actor: $GITHUB_ACTOR"
