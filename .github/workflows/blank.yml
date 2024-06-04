@@ -57,4 +57,4 @@ jobs:
 
       - name: "Display github actions repository variables"
         run: |
-          echo "team: ${{vars.TEAM}}
+          echo "team: ${{vars.TEAM}}"
